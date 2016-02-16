@@ -18,6 +18,7 @@ clean: FORCE $(LATEXRUN)
 distclean: clean FORCE
 	@echo "target directory : "$(dir $(ALLTEXFILES))
 	@for d in $(dir $(ALLTEXFILES)); do (cd $$d; $(LATEXRUN) -O $(TMPDIR) --clean-all; rm -rf $(TMPDIR)); done
+	@rm -f echo $(patsubst %.tex, %.pdf, $(ALLTEXFILES))
 
 $(LATEXRUN):
 	if ! [ -f $(LATEXRUN) ]; then cd $(dir $(LATEXRUN)); git submodule init && git submodule update; fi
