@@ -1,0 +1,62 @@
+\documentclass[a4paper,xelatex,ja=standard,twocolumn]{bxjsarticle}
+
+\input{../preamble.tex}
+
+\title{README}
+
+\begin{document}
+\maketitle
+
+latexrun\footnote{\url{https://github.com/aclements/latexrun}}を使っている．
+latexmkも良かったけど，latexrunは{\LaTeX}の出力が見やすいように整形されている点が便利なので使う．
+
+git submodule でlatexrunを.latexrunにcloneして使っている．
+
+自分用gitディレクトリにcdしてから，
+
+git subtree add --squash https://github.com/eisoku9618/report.git master -P report
+
+とすると良い．
+
+\section{依存関係}
+\begin{enumerate}
+  \item {\TeX}Live 2010以降
+    \begin{enumerate}
+      \item tex --version で確認可能
+    \end{enumerate}
+  \item bxjsarticle最新版
+    \begin{enumerate}
+      \item mkdir -p ~/texmf/tex/latex
+      \item cd ~/texmf/tex/latex
+      \item git clone https://github.com/zr-tex8r/BXjscls.git
+    \end{enumerate}
+\end{enumerate}
+
+\section{使い方}
+\subsection{ビルド方法}
+\begin{enumerate}
+  \item make XXX.tex でXXX.texをビルドできる
+  \item make XXX/YYY.tex でサブディレクトリのものもビルドできる
+  \item make でサブディレクトリ含めて全部ビルドする
+\end{enumerate}
+\subsection{clean方法}
+\begin{enumerate}
+  \item make clean TARGET=./ で現在のディレクトリをcleanできる
+  \item make clean TARGET=./XXX でディレクトリXXX以下をcleanできる
+  \item make distclean でサブディレクトリ含めて全部をcleanできる
+\end{enumerate}
+
+\section{ディレクトリ構成}
+{\TeX}ファイルを現在のディレクトリに置いても，サブディレクトリを掘っても使えるようにした．
+今は使っていないが，スタイルファイルなど用のディレクトリを掘ったときようにTEXINPUTS="styles:"をつけている．
+
+preamble.texとMakefileは全てに影響するファイル．
+
+\section{できていないこと}
+\begin{enumerate}
+  \item bibliographystyle{junsrt}としたらエラーが出るけど良く分からない
+  \item PDFを開いた時に左側に目次的なのが出るやつがhyperrefでできると思っているけど，出来ない
+  \item usepackga{fancyhdr}でヘッダー・フッターをいじれるらしいが，奇数ページだけ何故かうまく行かない．
+\end{enumerate}
+
+\end{document}
