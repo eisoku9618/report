@@ -1,0 +1,36 @@
+\section{{\TeX}で日本語の文章を書くときに気をつけること} \label{sec:no1}
+
+処理系やドキュメントクラスなど色々あるが，確認事項としては，
+
+\begin{enumerate}
+ \item 日本語用ドキュメントクラスを使っているか
+ \item 日本語とEnglishの間に「四分アキ」はあるか
+ \item 日本語フォントは埋め込まれているか
+\end{enumerate}
+
+くらいがあるっぽい．
+また，{\TeX}Liveは2010以降でないと日本語がutf-8で扱えないので，
+Ubuntu14.04くらいからが良い．
+
+\subsection{日本語用ドキュメントクラス}
+
+まず，使用するドキュメントクラスが日本語用である必要がある．
+理由は，日本語組版固有のスタイルがあるからで，それはそんなものかなという気がする．
+
+最初にjarticleが作られたが，
+規格に合っていなかったみたいでjsarticleが作られて，
+jsarticleがplatexに強く依存していて他の処理系で使えなかったのでbxjsarticleが作られた，という流れ．
+この文章はbxjsarticleを使っている．
+なぜなら，platexやuplatexではなくて，xelatexを使いたかったから．
+その理由は，latexrunを使いたかったから．
+latexrunを使いたかったのは，出力を見やすくしてくれるから．
+
+\subsection{四分アキ}
+
+「CやC++では」，と書いたときに，日本語と英語との境目にスペースを入れるのが美しいらしく，そうなっているかどうか．
+ちなみに，2016/02/15，Ubuntu14.04，bxjsarticleはgithubの最新の段階では，pdflatexを使うと四分アキが出来ず，xelatex / lualatexは四分アキが出来ていたが，lualatexよりもxelatexの方がビルドが早かったので，xelatexを使うことにした．
+
+\subsection{フォントの埋め込み}
+platexとdvipdfmxを組み合わせていた時は，dvipdfmxの-fオプションでフォントマップを指定しないと埋め込まれない，ということがあったが，pdflatexとかxelatexとかは何もしなくても埋め込まれる．
+
+pdffonts xxx.pdfで確認可能で，embの欄がyesとなっていればいい．

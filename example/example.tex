@@ -1,0 +1,32 @@
+\documentclass[a4paper,xelatex,10pt,ja=standard]{bxjsarticle}
+
+\input{../preamble.tex}
+\hypersetup{pdftitle={メモ},
+        pdfsubject={memo},
+        pdfkeywords={memo}}
+
+\title{{\XeLaTeX}で日本語文書を書くときのメモ}
+
+\begin{document}
+\maketitle
+
+参考文献テスト\cite{test}
+
+以下で構成される
+
+\begin{enumerate}
+  \item \fullref{sec:no1}
+  \item \fullref{sec:no2}
+  \item \fullref{sec:no3}
+\end{enumerate}
+
+\input{texs/01.tex}
+\input{texs/02.tex}
+\input{texs/03.tex}
+
+\bibliographystyle{unsrt}
+%% \phantomsection
+\setlength{\bibsep}{3pt}
+\bibliography{bib}
+
+\end{document}

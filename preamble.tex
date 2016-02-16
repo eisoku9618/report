@@ -1,0 +1,28 @@
+%% \XeLaTeXロゴ
+\usepackage{metalogo}
+%% subfigureのモダンな書き方のため
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand{\subfigureautorefname}{\figureautorefname}
+%% 箇条書き
+\usepackage{enumerate}
+%% bib
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+%% ソースコードを貼り付けるため
+\usepackage{listings, color}
+%% 必須っぽい
+\usepackage{amsmath, amssymb}
+%% レイアウトのため
+\usepackage{geometry, layout}
+\geometry{top=2cm, bottom=2cm, left=1.5cm, right=1.5cm, includefoot}
+%% リンクを貼るため
+%% \usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage[pdfborder={0 0 0}, colorlinks=true, pdfencoding=auto]{hyperref}
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}}
+\hypersetup{bookmarks=true,
+        bookmarksnumbered=true,
+        hidelinks,
+        setpagesize=false,
+        pdfauthor={EisokuKuroiwa}}
+
+\author{Eisoku Kuroiwa}
