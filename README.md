@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/eisoku9618/report.svg?branch=master)](https://travis-ci.org/eisoku9618/report)
+
 野沢さんがやっているようにTeXを使ってメモを取っておくと便利な気もしているので，
 それを快適にできるようにすることを目指したパッケージ．
 
