@@ -1,0 +1,14 @@
+language: generic
+sudo: required
+dist: trusty
+before_install:
+  - sudo aptitude -y install texlive-lang-cjk texlive-xetex texlive-fonts-recommended
+install:
+  - mkdir -p ${HOME}/texmf/tex/latex
+  - (cd ${HOME}/texmf/tex/latex && git clone https://github.com/zr-tex8r/BXjscls.git)
+script:
+  - ls
+  - pwd
+  - make
+after_failure:
+  - echo "failure"
