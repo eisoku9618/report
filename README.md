@@ -37,7 +37,6 @@ gnome-open example/example.pdf
    - jarticleやjsarticleは``platex``までにしか対応していなくて，``pdfplatex``や``xelatex``では使えない
    - https://github.com/zr-tex8r/BXjscls というレポジトリで提供されているbxjsarticleはjsarticleを``platex``に依存しないようにしたもので，``pdfplatex``や``xelatex``で使える！！！
    - が，Ubuntu14.04に最初から入っているのではダメだったので，``git clone``する必要があるっぽい
-- いらないかもしれないけど``sudo apt-get install texlive-full``(ダウンロードに割と時間かかるパッケージ)
 
 つまり，Ubutnu14.04にて
 
