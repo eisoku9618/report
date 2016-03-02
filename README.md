@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/eisoku9618/report.svg?branch=master)](https://travis-ci.org/eisoku9618/report)
+
 野沢さんがやっているようにTeXを使ってメモを取っておくと便利な気もしているので，
 それを快適にできるようにすることを目指したパッケージ．
 
@@ -35,12 +37,11 @@ gnome-open example/example.pdf
    - jarticleやjsarticleは``platex``までにしか対応していなくて，``pdfplatex``や``xelatex``では使えない
    - https://github.com/zr-tex8r/BXjscls というレポジトリで提供されているbxjsarticleはjsarticleを``platex``に依存しないようにしたもので，``pdfplatex``や``xelatex``で使える！！！
    - が，Ubuntu14.04に最初から入っているのではダメだったので，``git clone``する必要があるっぽい
-- いらないかもしれないけど``sudo apt-get install texlive-full``(ダウンロードに割と時間かかるパッケージ)
 
 つまり，Ubutnu14.04にて
 
 ```bash
-sudo apt-get install texlive-full
+sudo apt-get install texlive-lang-cjk texlive-xetex texlive-fonts-recommended
 mkdir -p ~/texmf/tex/latex
 cd ~/texmf/tex/latex
 git clone https://github.com/zr-tex8r/BXjscls.git
