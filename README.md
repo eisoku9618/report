@@ -42,7 +42,7 @@ gnome-open example/example.pdf
 つまり，Ubutnu14.04にて
 
 ```bash
-sudo apt-get install texlive-full
+sudo apt-get install texlive-lang-cjk texlive-xetex texlive-fonts-recommended
 mkdir -p ~/texmf/tex/latex
 cd ~/texmf/tex/latex
 git clone https://github.com/zr-tex8r/BXjscls.git
