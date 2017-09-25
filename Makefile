@@ -8,9 +8,11 @@ LATEXRUNARGS ?=  # make LATEXRUNARGS=--debug
 all: $(ALLTEXFILES)
 
 $(ALLTEXFILES): FORCE
+	$(eval FNAME := $(notdir $@))
 	@echo "BUILDING : "$@
 	cd $(dir $@) && \
-	TEXINPUTS="styles:" $(LATEXRUN) $(LATEXRUNARGS) --latex-cmd=xelatex --bibtex-cmd=pbibtex -O $(TMPDIR) $(notdir $@)
+	TEXINPUTS="styles:" $(LATEXRUN) $(LATEXRUNARGS) --latex-cmd=xelatex --bibtex-cmd=pbibtex -O $(TMPDIR) $(FNAME) && \
+	cp $(TMPDIR)/$(FNAME:.tex=.pdf) $(FNAME:.tex=.pdf)
 
 clean: FORCE
 	$(LATEXRUN) -O $(TARGET)/$(TMPDIR) --clean-all
