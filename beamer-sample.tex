@@ -1,0 +1,115 @@
+\documentclass[unicode,aspectratio=169]{beamer}
+\usepackage{zxjatype}
+\usepackage[ipaex]{zxjafont}
+\usepackage{metalogo}
+
+\usetheme{Berkeley}
+\setbeamertemplate{footline}[frame number] %ページ番号
+
+\begin{document}
+
+\title{Beamer Sample}
+\subtitle{サブタイトルはここに}
+\author{eisoku9618}
+\institute{所属はここに}
+\date{\today}
+
+\frame{\titlepage}
+
+\frame{\frametitle{目次は自動生成です}\tableofcontents}
+
+
+\section{section 1}
+\frame{\frametitle{ここに文字を入れるとタイトルになる}
+  はろーわーるど\\
+  このサンプルは以下から拝借\\
+  \url{http://www2.informatik.uni-freiburg.de/~frank/ENG/beamer/example/Beamer-class-example1.tex}
+}
+\subsection{Subsection no.1.1}
+\frame{
+  タイトル無しも可能
+}
+
+
+\section{section 2}
+\subsection{list I}
+\frame{\frametitle{番号なしリスト}
+  \begin{itemize}
+  \item これは \XeLaTeX を使っています．
+  \item ので，日本語が入力できます．
+  \item \XeLaTeX は \XeTeX 上で動く \LaTeX らしいです．
+  \item テーマは Berkeley を使っています．左側がおしゃれなので．
+  \end{itemize}
+}
+
+\frame{\frametitle{アニメーション的なことが pause で出来ます}
+  \begin{itemize}
+  \item まずこれ
+    \pause
+  \item 次にこれ
+    \pause
+  \item そして
+    \pause
+  \item 最後
+  \end{itemize}
+}
+
+\subsection{list II}
+\frame{\frametitle{番号付きリスト}
+  \begin{enumerate}
+  \item あ
+  \item い
+  \item う
+  \end{enumerate}
+}
+\frame{\frametitle{こちらもpauseができます}
+  \begin{enumerate}
+  \item あ
+  \item い
+    \pause
+  \item う
+  \end{enumerate}
+}
+
+\section{section 3}
+\subsection{Tables}
+\frame{\frametitle{Tables}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Date} & \textbf{Instructor} & \textbf{Title} \\
+    \hline
+    WS 04/05 & Sascha Frank & First steps with  \LaTeX  \\
+    \hline
+    SS 05 & Sascha Frank & \LaTeX \ Course serial \\
+    \hline
+\end{tabular}}
+
+
+\frame{\frametitle{Tables with pause}
+  \begin{tabular}{c c c}
+    A & B & C \\
+    \pause
+    1 & 2 & 3 \\
+    \pause
+    A & B & C \\
+\end{tabular} }
+
+
+\section{section 4}
+\subsection{blocs}
+\frame{\frametitle{blocs}
+
+  \begin{block}{title of the bloc}
+    bloc text
+  \end{block}
+
+  \begin{exampleblock}{title of the bloc}
+    bloc text
+  \end{exampleblock}
+
+
+  \begin{alertblock}{title of the bloc}
+    bloc text
+  \end{alertblock}
+}
+\end{document}
